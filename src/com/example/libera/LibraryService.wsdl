@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://example.com/libera"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://example.com/libera">
+    <service name="LibraryService">
+        <port name="LibraryServicePort" binding="tns:LibraryServiceBinding">
+            <soap:address location="http://localhost:8080/libera/soap/LibraryService"/>
+        </port>
+    </service>
+    <binding name="LibraryServiceBinding" type="tns:LibraryService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="addBook">
+            <soap:operation soapAction=""/>
+            <input message="tns:addBook"/>
+        </operation>
+        <operation name="getBookByIsbn">
+            <soap:operation soapAction=""/>
+            <input message="tns:getBookByIsbn"/>
+            <output message="tns:getBookByIsbnResponse"/>
+        </operation>
+        <operation name="removeBook">
+            <soap:operation soapAction=""/>
+            <input message="tns:removeBook"/>
+        </operation>
+    </binding>
+    <message name="addBook">
+        <part name="book" type="xsd:string"/>
+    </message>
+    <message name="getBookByIsbn">
+        <part name="isbn" type="xsd:string"/>
+    </message>
+    <message name="getBookByIsbnResponse">
+        <part name="book" type="xsd:string"/>
+    </message>
+    <message name="removeBook">
+        <part name="isbn" type="xsd:string"/>
+    </message>
+</definitions>
