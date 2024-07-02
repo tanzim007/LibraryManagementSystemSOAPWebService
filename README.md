@@ -20,6 +20,7 @@ Technologies and Frameworks:
 Java (JDK 1.8)
 Spring Framework
 Maven 3.2 for dependency management
-Apache CXF for SOAP web services (since it's not mentioned in the original project, I'll use it as it's a popular choice for SOAP web services in Java)
+Apache CXF for SOAP web services 
+
 
 
